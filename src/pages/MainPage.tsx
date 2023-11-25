@@ -6,6 +6,7 @@ import NoteForm from "../components/NoteForm/NoteForm";
 import {Note} from "../store/types/notes";
 import {createNote} from "../store/app.store";
 import {useSaveNotes} from "../hooks/useSaveNotes";
+import Filter from "../components/Filter/Filter";
 
 const MainPage = () => {
     useSaveNotes();
@@ -43,6 +44,7 @@ const MainPage = () => {
                 <Button type="primary" onClick={showModal}>
                     Create new Note!
                 </Button>
+                <Filter />
                 <NoteList />
             </div>
         </>

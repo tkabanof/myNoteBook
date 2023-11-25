@@ -3,7 +3,7 @@ import {AgGridReact} from "ag-grid-react";
 import styles from "./NoteList.module.css"
 import "ag-grid-community/styles/ag-grid.css";
 import "ag-grid-community/styles/ag-theme-alpine.css";
-import {$notes} from "../../store/app.store";
+import {$notes, $notesFiltered} from "../../store/app.store";
 import {useStore} from "effector-react";
 import {ColDef} from "ag-grid-community/dist/lib/entities/colDef";
 import {Note, NoteListItem, Notes} from "../../store/types/notes";
@@ -13,8 +13,8 @@ import TableActions from "../TableActions/TableActions";
 import {useWindowDimensions} from "../../hooks/useDimensions";
 
 const columnDefs: ColDef<NoteListItem>[] = [
-    { field: "title", headerName: "Title", sortable: true, filter: 'agTextColumnFilter' },
-    { field: "tags", headerName: "Tags", filter: 'agMultiColumnFilter', cellRenderer: (params: ICellRendererParams<Note, Note["tags"] >)=>{
+    { field: "title", headerName: "Title" },
+    { field: "tags", headerName: "Tags", cellRenderer: (params: ICellRendererParams<Note, Note["tags"] >)=>{
             return <TableTags tags={params.value ?? undefined} />
         }},
     { field: "id", headerName: 'Actions', cellRenderer: (params: ICellRendererParams<Note, Note["id"] >)=>{
@@ -27,7 +27,7 @@ const NoteList = () => {
     const {width}= useWindowDimensions()
     const [isLoaded, setIsLoaded] =useState(false);
     const gridRef = useRef<AgGridReact<NoteListItem>>(null);
-    const notes = useStore($notes);
+    const notes = useStore($notesFiltered);
     const notesList = notes.map(({tags, title, id})=>{
         return {tags, title, id}
     })
