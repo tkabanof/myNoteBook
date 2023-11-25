@@ -30,7 +30,7 @@ export const $notes = createStore<Notes>([{
 export const $notesFiltered = createStore<Notes>([]);
 
 
-export const $tags = $notes.map<string[]>((state, lastState)=>{
+export const $tags = $notes.map<string[]>((state)=>{
     const tags = state.reduce<string[]>((prev, curr)=>{
         return curr.tags.concat(prev)
     }, [])

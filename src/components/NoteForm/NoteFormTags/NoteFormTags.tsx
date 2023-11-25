@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { PlusOutlined } from '@ant-design/icons';
 import type { InputRef } from 'antd';
-import {Form, Input, Space, Tag, theme, Tooltip} from 'antd';
+import {Form, Input, Space, Tag, Tooltip} from 'antd';
 import {Note} from "../../../store/types/notes";
 
 const NoteFormTags = () => {

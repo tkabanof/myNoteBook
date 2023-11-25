@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {Button, Form, Modal, Popconfirm, Space} from "antd";
 import {DeleteOutlined, EditOutlined} from "@ant-design/icons";
-import {$editingNote, createNote, deleteNote, openNote, resetEditNote, updateNote} from "../../store/app.store";
+import {$editingNote, deleteNote, openNote, resetEditNote, updateNote} from "../../store/app.store";
 import NoteForm from "../NoteForm/NoteForm";
 import {Note} from "../../store/types/notes";
 import {useStore} from "effector-react";

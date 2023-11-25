@@ -1,12 +1,12 @@
-import React, {LegacyRef, MutableRefObject, useCallback, useEffect, useMemo, useRef, useState} from 'react';
+import React, { useCallback, useEffect, useRef, useState} from 'react';
 import {AgGridReact} from "ag-grid-react";
 import styles from "./NoteList.module.css"
 import "ag-grid-community/styles/ag-grid.css";
 import "ag-grid-community/styles/ag-theme-alpine.css";
-import {$notes, $notesFiltered} from "../../store/app.store";
+import { $notesFiltered} from "../../store/app.store";
 import {useStore} from "effector-react";
 import {ColDef} from "ag-grid-community/dist/lib/entities/colDef";
-import {Note, NoteListItem, Notes} from "../../store/types/notes";
+import {Note, NoteListItem} from "../../store/types/notes";
 import {ICellRendererParams} from "ag-grid-community";
 import TableTags from "../TableTags/TableTags";
 import TableActions from "../TableActions/TableActions";

@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import NoteList from "../components/NoteList/NoteList";
 import styles from "./MainPage.module.css";
 import {Button, Form, Modal} from "antd";
